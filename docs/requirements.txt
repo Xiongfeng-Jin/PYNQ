@@ -4,7 +4,6 @@
 
 numpy
 matplotlib
-nbsphinx==0.2.16
 pynq
 jupyter_client
 cffi
