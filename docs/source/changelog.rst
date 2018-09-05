@@ -2,12 +2,27 @@
 Change Log
 ************************
 
+Version 2.2 
+============================
+
+Image release: pynq_z2_v2.2
+
+Documentation updated 10 May 2018
+
+* Board Additions
+   * PYNQ-Z2 support added
+* New Microblaze Subsystems
+   * Added RPi Microblaze subsystem, bsp and notebooks
+* New IP
+   * Added audio with codec support
+
+
 Version 2.1 
 ============================
 
 Image release: pynq_z1_v2.1
 
-Documentation updated 14 Feb 2018
+Documentation updated 21 Feb 2018
 
 * Overlay Changes
    * All overlays updated to build with Vivado 2017.4
@@ -26,6 +41,7 @@ Documentation updated 14 Feb 2018
    * Updated to Ubuntu 16.04 LTS (Xenial)
    * Updated kernel to tagged 2017.4 Xilinx release.
    * Jupyter now listens on both :80 and :9090 ports
+   * opencv2.4.9 removed
 * Microblaze Programming
    * IPython magics added for Jupyter programming of Microblazes
    * Microblaze pyprintf, RPC, and Python-callable function generation added.
