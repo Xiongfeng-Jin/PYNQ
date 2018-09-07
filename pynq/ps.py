@@ -622,13 +622,13 @@ class _ClocksUltrascale(_ClocksMeta):
         APLL_CTRL = Register(CRF_APB_ADDRESS + APLL_CTRL_OFFSET)
         DPLL_CTRL = Register(CRF_APB_ADDRESS + DPLL_CTRL_OFFSET)
         VPLL_CTRL = Register(CRF_APB_ADDRESS + VPLL_CTRL_OFFSET)
+
+        PL_SRC_PLL_CTRLS = [IOPLL_CTRL, IOPLL_CTRL, RPLL_CTRL, DPLL_CTRL]
+        ACPU_SRC_PLL_CTRLS = [APLL_CTRL, APLL_CTRL, DPLL_CTRL, VPLL_CTRL]
     else:
         warnings.warn("Pynq does not support the CPU Architecture: {}"
                       .format(CPU_ARCH), ResourceWarning)
-
-    PL_SRC_PLL_CTRLS = [IOPLL_CTRL, IOPLL_CTRL, RPLL_CTRL, DPLL_CTRL]
-    ACPU_SRC_PLL_CTRLS = [APLL_CTRL, APLL_CTRL, DPLL_CTRL, VPLL_CTRL]
-
+                      
     @classmethod
     def set_pl_clk(mcs, clk_idx, div0=None, div1=None,
                    clk_mhz=DEFAULT_PL_CLK_MHZ):
@@ -761,12 +761,13 @@ class _ClocksZynq(_ClocksMeta):
                         Register(SLCR_BASE_ADDRESS + FCLK3_CTRL_OFFSET)]
 
         ARM_CLK_CTRL = Register(SLCR_BASE_ADDRESS + ARM_CLK_CTRL_OFFSET)
+
+        ARM_SRC_PLL_CTRLS = [ARM_PLL_CTRL, ARM_PLL_CTRL,
+                         DDR_PLL_CTRL, IO_PLL_CTRL]
     else:
         warnings.warn("Pynq does not support the CPU Architecture: {}"
                       .format(CPU_ARCH), ResourceWarning)
 
-    ARM_SRC_PLL_CTRLS = [ARM_PLL_CTRL, ARM_PLL_CTRL,
-                         DDR_PLL_CTRL, IO_PLL_CTRL]
 
     @classmethod
     def set_pl_clk(mcs, clk_idx, div0=None, div1=None,
