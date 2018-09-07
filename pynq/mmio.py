@@ -30,7 +30,7 @@
 import os
 import mmap
 import numpy as np
-from .ps import CPU_ARCH_IS_SUPPORTED, CPU_ARCH
+from pynq.ps import CPU_ARCH_IS_SUPPORTED, CPU_ARCH
 
 __author__ = "Yun Rock Qu"
 __copyright__ = "Copyright 2016, Xilinx"
