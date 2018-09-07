@@ -30,6 +30,7 @@
 import os
 import mmap
 import numpy as np
+from .ps import CPU_ARCH_IS_SUPPORTED, CPU_ARCH
 
 __author__ = "Yun Rock Qu"
 __copyright__ = "Copyright 2016, Xilinx"
@@ -76,9 +77,12 @@ class MMIO:
         if base_addr < 0 or length < 0:
             raise ValueError("Base address or length cannot be negative.")
 
-        euid = os.geteuid()
-        if euid != 0:
-            raise EnvironmentError('Root permissions required.')
+        if CPU_ARCH_IS_SUPPORTED:
+           if euid != 0:
+              raise EnvironmentError('Root permissions required.')
+        else:
+           warnings.warn("Pynq does not support the CPU Architecture: {}"
+                      .format(CPU_ARCH), ResourceWarning)
 
         # Align the base address with the pages
         self.virt_base = base_addr & ~(mmap.PAGESIZE - 1)
