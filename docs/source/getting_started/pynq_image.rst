@@ -17,7 +17,8 @@ to make a bootable MicroSD card:
  Board                       Download PYNQ image                                                                   
 =========================== =========================================================================================
  Pynq-Z1 board (Digilent)    `Pynq-Z1 v2.1 image <http://files.digilent.com/Products/PYNQ/pynq_z1_v2.1.img.zip>`_  
- Pynq-Z2 board (TUL)         `Pynq-Z2 v2.2 image <http://www.tul.com.tw/download/pynq_z2_image_2018_04_24.img.zip>`_ 
+ Pynq-Z2 board (TUL)         `Pynq-Z2 v2.2 image <http://www.tul.com.tw/download/pynq_z2_v2.2.img.zip>`_ 
+ ZCU104 board (Xilinx)       `ZCU104 v2.3 image <>`_ 
 =========================== =========================================================================================
 
 If you already have a MicroSD card preloaded with a PYNQ image for your

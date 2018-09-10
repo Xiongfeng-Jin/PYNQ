@@ -44,6 +44,7 @@ v1.4               2015.4
 v2.0               2016.1
 v2.1               2017.4
 v2.2               2017.4
+v2.3               2018.2
 ================  ================
 
 .. code-block:: console
@@ -75,7 +76,7 @@ There is a standardised flow for Zynq-7000 boards defined in
 
 .. code-block:: console
     
-   <PYNQ repository>/sdbuild/Zynq7000.makefile
+   <PYNQ repository>/sdbuild/boot_configs/common/Zynq7000.makefile
 
 This file is customised by setting a number of variables and providing paths to
 some setup scripts. The Board-specific ``config`` file is by convention placed

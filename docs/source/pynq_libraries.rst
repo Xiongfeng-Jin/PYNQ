@@ -106,3 +106,6 @@ PL control
 
     pynq_libraries/overlay.rst
     pynq_libraries/pl.rst
+    pynq_libraries/pynqmb_reference.rst       
+    pynq_libraries/pmbus.rst
+
