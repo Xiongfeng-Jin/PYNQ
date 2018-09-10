@@ -4,7 +4,7 @@
 
 numpy
 matplotlib
-nbsphinx == 0.3.3
+nbsphinx == 0.3.2
 pynq
 jupyter_client
 cffi
