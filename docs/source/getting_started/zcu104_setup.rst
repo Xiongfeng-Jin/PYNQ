@@ -7,7 +7,7 @@ ZCU104 Setup Guide
 Prerequisites
 =============
 
-  * `ZCU104 board<https://www.xilinx.com/products/boards-and-kits/zcu104.html>`_
+  * `ZCU104 board <https://www.xilinx.com/products/boards-and-kits/zcu104.html>`_
   * Computer with compatible browser (`Supported Browsers
     <http://jupyter-notebook.readthedocs.org/en/latest/notebook.html#browser-compatibility>`_)
   * Ethernet cable
