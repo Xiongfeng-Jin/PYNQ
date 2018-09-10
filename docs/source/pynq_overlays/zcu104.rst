@@ -1,4 +1,4 @@
-.. _pynqz2-overlays:
+.. _ZCU104-overlays:
 
 ****************
 ZCU104 Overlays

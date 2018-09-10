@@ -62,6 +62,7 @@ IP
 
     pynq_libraries/audio.rst
     pynq_libraries/axigpio.rst
+    pynq_libraries/axiiic.rst
     pynq_libraries/dma.rst
     pynq_libraries/logictools.rst
     pynq_libraries/video.rst
@@ -106,6 +107,6 @@ PL control
 
     pynq_libraries/overlay.rst
     pynq_libraries/pl.rst
-    pynq_libraries/pynqmb_reference.rst       
+    pynq_libraries/pynqmb_reference.rst
     pynq_libraries/pmbus.rst
 
