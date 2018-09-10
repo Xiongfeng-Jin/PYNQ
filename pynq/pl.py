@@ -451,9 +451,7 @@ class _TCLABC(metaclass=abc.ABCMeta):
                                      'pins': output_pins}
 
     def _add_interrupt_pins(self, net, parent, offset):
-        net_pins = set()
-        if net in self.nets:
-            net_pins = self.nets[net]
+        net_pins = self.nets[net]
         # Find the next item up the chain
         for p in net_pins:
             m = re.match('(.*)/dout', p)
@@ -479,8 +477,11 @@ class _TCLABC(metaclass=abc.ABCMeta):
     def _add_concat_pins(self, name, parent, offset):
         num_ports = self.concat_cells[name]
         for i in range(num_ports):
-            net = self.pins[name + "/In" + str(i)]
-            offset = self._add_interrupt_pins(net, parent, offset)
+            if (name + "/In" + str(i)) in self.pins:
+                net = self.pins[name + "/In" + str(i)]
+                offset = self._add_interrupt_pins(net, parent, offset)
+            else:
+                offset = 1
         return offset
 
     def _assign_interrupts_gpio(self):
@@ -1602,7 +1603,6 @@ class _BitstreamMeta:
 
         """
         self._download()
-        self._update_pl()
         if not self.partial:
             self._update_pl()
 
@@ -1623,53 +1623,8 @@ class _BitstreamMeta:
         PL.server_update()
 
 
-class _BitstreamZynq(_BitstreamMeta):
-    """This class instantiates a PL bitstream for Zynq.
-
-    Note
-    ----
-    This class inherits from the _BitstreamMeta class
-
-    """
-    BS_IS_PARTIAL = "/sys/devices/soc0/amba/f8007000.devcfg/" \
-                    "is_partial_bitstream"
-    BS_XDEVCFG = "/dev/xdevcfg"
-
-    def _download(self):
-        """The method to download the bitstream onto PL.
-
-        Note
-        ----
-        The class variables held by the singleton PL will also be updated.
-
-        Returns
-        -------
-        None
-
-        """
-        if not os.path.exists(self.BS_XDEVCFG):
-            raise RuntimeError("Could not find programmable device")
-
-        # Compose bitfile name, open bitfile
-        with open(self.bitfile_name, 'rb') as f:
-            buf = f.read()
-
-        # Set is_partial_bitfile device attribute to the appropriate value
-        with open(self.BS_IS_PARTIAL, 'w') as fd:
-            if self.partial:
-                fd.write('1')
-            else:
-                fd.write('0')
-
-        PL.shutdown()
-
-        # Write bitfile to xdevcfg device
-        with open(self.BS_XDEVCFG, 'wb') as f:
-            f.write(buf)
-
-
-class _BitstreamUltrascale(_BitstreamMeta):
-    """This class instantiates a PL bitstream for Zynq Ultrascale.
+class Bitstream(_BitstreamMeta):
+    """This class instantiates a PL bitstream using FPGA manager to download
 
     Note
     ----
@@ -1677,6 +1632,7 @@ class _BitstreamUltrascale(_BitstreamMeta):
 
     """
     BS_FPGA_MAN = "/sys/class/fpga_manager/fpga0/firmware"
+    BS_FPGA_MAN_FLAGS = "/sys/class/fpga_manager/fpga0/flags"
     
     def _download(self):
         """The method to download the bitstream onto PL.
@@ -1697,6 +1653,11 @@ class _BitstreamUltrascale(_BitstreamMeta):
         self.bin_path = '/lib/firmware/' + bin_file
         self.convert_bit_to_bin()
         PL.shutdown()
+        with open(self.BS_FPGA_MAN_FLAGS, "w") as fd:
+            # The 20 flag tells the driver that we are passing in an old-style
+            # raw binary bitstream so we don't need to add the new-style header
+            # to the bin file
+            fd.write('20')
         with open(self.BS_FPGA_MAN, 'w') as fd:
             fd.write(bin_file)
 
@@ -1795,15 +1756,3 @@ class _BitstreamUltrascale(_BitstreamMeta):
                 else:
                     raise RuntimeError("Unknown field: {}".format(hex(desc)))
             return bit_dict
-
-
-if CPU_ARCH == ZU_ARCH:
-    Bitstream = _BitstreamUltrascale
-elif CPU_ARCH == ZYNQ_ARCH:
-    Bitstream = _BitstreamZynq
-else:
-    # Use the _BitstreamMeta class as the Bitstream implementation
-    # so that the docs get built correctly
-    Bitstream = _BitstreamMeta
-    warnings.warn("PYNQ does not support the CPU Architecture: {}"
-                  .format(CPU_ARCH), ResourceWarning)
