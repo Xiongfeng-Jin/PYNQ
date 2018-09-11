@@ -3,8 +3,8 @@
 Base Overlay
 ============
 
-The purpose of the *base* overlay design for any PYNQ supported board is to allow peripherals on a
-board to be used out-of-the-box. 
+The purpose of the *base* overlay design for any PYNQ supported board is to 
+allow peripherals on a board to be used out-of-the-box. 
 
 The design includes hardware IP to control peripherals on
 the target board, and connects these IP blocks to the Zynq PS. If a base
@@ -12,7 +12,7 @@ overlay is available for a board, peripherals can be used from the Python
 environment immediately after the system boots.
 
 Board peripherals typically include GPIO devices (LEDs, Switches, Buttons),
-Video, Audio, and other custom interfaces. 
+Video, and other custom interfaces. 
 
 As the base overlay includes IP for the peripherals on a board, it can also be
 used as a reference design for creating new customized overlays.
@@ -44,10 +44,16 @@ HDMI
 The ZCU104 has 2x HDMI ports supporting HDMI 2.0 video input and output. The
 HDMI interfaces are controlled by HDMI IP in the programmable logic.
 
-The HDMI IP is connected to PS DRAM. Video can be streamed from the
+The HDMI IP is connected through a video DMA to PS DRAM. Video can be streamed 
+from the
 HDMI *in* to memory, and from memory to HDMI *out*. This allows processing of
 video data from python, or writing an image or Video stream from Python to the
 HDMI out.
+
+Note that the ZCU104 also has a DisplayPort connected to the PS. While the 
+Display port is not part of the Overlay (as it is always connected) video data
+can be streamed from the HDMI PL sources
+to the DisplayPort.
 
 Note that while Jupyter notebook supports embedded video, video captured from
 the HDMI will be in raw format and would not be suitable for playback in a
