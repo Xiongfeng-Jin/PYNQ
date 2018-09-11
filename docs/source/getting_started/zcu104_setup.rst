@@ -23,7 +23,7 @@ You can watch the getting started video guide, or follow the instructions in
 .. raw:: html
 
     <embed>
-         <iframe width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+         <iframe width="560" height="315" src="https://www.youtube.com/embed/emXEmVONk0Q" frameborder="0" allowfullscreen></iframe>
          </br>
          </br>
     </embed>
@@ -36,7 +36,7 @@ Board Setup
    .. image:: ../images/zcu104_setup.png
       :align: center
 
-  1. Set the ** Boot** Dip Switch (SW6) to 1: Off, 2: On, 3: On, 4: On
+  1. Set the **Boot** Dip Switch (SW6) to 1: Off, 2: On, 3: On, 4: On
      (This sets the board to boot from the Micro-SD card)
    
   2. Connect the 12V power cable. Note that the connector is keyed and can only
@@ -59,9 +59,9 @@ Turning On the ZCU104
 ----------------------
 
 As indicated in step 6, slide the power switch to the *ON*
-position to turn on the board. The **Red** INIT_B LED will come on immediately to
-confirm that the board has power.  After a few seconds, this will change to **Yellow
-** and the *Yellow Done** LED will turn on. This indicates that the bitstream
+position to turn on the board. A **Red** LED and some additional yellow board LEDs will come on to
+confirm that the board has power.  After a few seconds, the red LED will change to **Yellow
+**. This indicates that the bitstream
 has been downloaded and the system is booting. 
 
   .. include:: network_connection.rst

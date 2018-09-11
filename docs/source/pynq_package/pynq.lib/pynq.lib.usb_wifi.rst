@@ -1,10 +1,10 @@
-pynq.lib.usb_wifi Module
-========================
+pynq.lib.wifi Module
+====================
 
-The pynq.lib.usb_wifi module is a python module for interacting with USB WiFI
-dongles. This module can be used to connect and disconnect to wireless networks.
+The pynq.lib.wifi module is a python module for interacting with WiFI adapters. 
+This module can be used to connect and disconnect to wireless networks.
 
-.. automodule:: pynq.lib.usb_wifi
+.. automodule:: pynq.lib.wifi
     :members:
     :undoc-members:
     :show-inheritance:
