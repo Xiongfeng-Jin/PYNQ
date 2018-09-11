@@ -43,8 +43,7 @@ Board Setup
      be connected in one way. 
 
   3. Insert the Micro SD card loaded with the appropriate PYNQ image into the 
-  **Micro
-     SD** card slot underneath the board
+     **MicroSD** card slot underneath the board
 
   4. (Optional) Connect the USB cable to your PC/Laptop, and to the 
      **USB JTAG UART** MicroUSB port on the board
