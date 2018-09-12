@@ -62,6 +62,7 @@ IP
 
     pynq_libraries/audio.rst
     pynq_libraries/axigpio.rst
+    pynq_libraries/axiiic.rst
     pynq_libraries/dma.rst
     pynq_libraries/logictools.rst
     pynq_libraries/video.rst
