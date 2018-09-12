@@ -7,19 +7,23 @@ PYNQ image
 PYNQ is delivered as a bootable image that can be written to an SD card or
 other media and used to boot the board.
 
+Images can be built from the PYNQ source code. Pre-compiled images for 
+supported boards are available and can be found via the 
+`PYNQ boards http://www.pynq.io/board.html>`_ page.
+
 Supported boards
 ----------------
 
 Pre-compiled images are available for the following boards and can be used
 to make a bootable MicroSD card:
 
-=========================== =========================================================================================
- Board                       Download PYNQ image                                                                   
-=========================== =========================================================================================
- Pynq-Z1 board (Digilent)    `Pynq-Z1 v2.1 image <http://files.digilent.com/Products/PYNQ/pynq_z1_v2.1.img.zip>`_  
- Pynq-Z2 board (TUL)         `Pynq-Z2 v2.2 image <http://www.tul.com.tw/download/pynq_z2_v2.2.img.zip>`_ 
- ZCU104 board (Xilinx)       `ZCU104 v2.3 image <>`_ 
-=========================== =========================================================================================
+=====================================================================================================================
+ Board
+=====================================================================================================================
+ `Pynq-Z1 board (Digilent) <https://store.digilentinc.com/pynq-z1-python-productivity-for-zynq-7000-arm-fpga-soc/>`_
+ `Pynq-Z2 board (TUL) <http://tul.com.tw/ProductsPYNQ-Z2.html>`_ 
+ `ZCU104 board (Xilinx) <https://www.xilinx.com/products/boards-and-kits/zcu104.html>`_ 
+=====================================================================================================================
 
 If you already have a MicroSD card preloaded with a PYNQ image for your
 board, you don't need to rewrite it unless you want to restore or update your

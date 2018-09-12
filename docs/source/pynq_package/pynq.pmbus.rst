@@ -1,7 +1,7 @@
 .. _pynq-pmbus:
    
 pynq.pmbus Module
-================
+=================
 
 .. automodule:: pynq.pmbus
     :members:
