@@ -58,10 +58,10 @@ Board Setup
 Turning On the ZCU104
 ----------------------
 
-As indicated in step 6, slide the power switch to the *ON*
-position to turn on the board. A **Red** LED and some additional yellow board LEDs will come on to
-confirm that the board has power.  After a few seconds, the red LED will change to **Yellow
-**. This indicates that the bitstream
-has been downloaded and the system is booting. 
+As indicated in step 6, slide the power switch to the *ON* position to turn on
+the board. A **Red** LED and some additional yellow board LEDs will come on to
+confirm that the board has power.  After a few seconds, the red LED will 
+change to **Yellow**. This indicates that the bitstream has been downloaded
+and the system is booting. 
 
   .. include:: network_connection.rst

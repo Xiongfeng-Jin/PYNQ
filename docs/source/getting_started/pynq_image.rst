@@ -9,7 +9,7 @@ other media and used to boot the board.
 
 Images can be built from the PYNQ source code. Pre-compiled images for 
 supported boards are available and can be found via the 
-`PYNQ boards http://www.pynq.io/board.html>`_ page.
+`PYNQ boards <http://www.pynq.io/board.html>`_ page.
 
 Supported boards
 ----------------
@@ -23,6 +23,7 @@ to make a bootable MicroSD card:
  `Pynq-Z1 board (Digilent) <https://store.digilentinc.com/pynq-z1-python-productivity-for-zynq-7000-arm-fpga-soc/>`_
  `Pynq-Z2 board (TUL) <http://tul.com.tw/ProductsPYNQ-Z2.html>`_ 
  `ZCU104 board (Xilinx) <https://www.xilinx.com/products/boards-and-kits/zcu104.html>`_ 
+
 =====================================================================================================================
 
 If you already have a MicroSD card preloaded with a PYNQ image for your
