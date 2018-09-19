@@ -34,7 +34,11 @@ E.g.
    import os
    print(os.environ['BOARD'])
 
+.. code-block :: console
+
    'Pynq-Z1'
+
+.. code-block :: python
 
    if(os.environ['BOARD'] is 'Pynq-Z1'):
       # Do something board specific 
