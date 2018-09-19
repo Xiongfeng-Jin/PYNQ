@@ -19,6 +19,27 @@ the pynq library is packaged see the following links:
 * `How to Package Your Python Code
   <https://python-packaging.readthedocs.io/en/latest/index.html>`_
 
+Board specific installation
+---------------------------
+
+A **board** variable is set in the ``os`` environment indicating the board that
+PYNQ is currently running on. E.g. 'Pynq-Z1', 'Pynq-Z2', 'ZCU104', and can be used
+to customize the installation of an overlay for a specific board, or to check the
+overlay is being installed on a supported board. 
+
+E.g. 
+
+.. code-block :: python
+
+   import os
+   print(os.environ['BOARD'])
+
+   'Pynq-Z1'
+
+   if(os.environ['BOARD'] is 'Pynq-Z1'):
+      # Do something board specific 
+
+
 Delivering Non-Python Files
 ---------------------------
 
