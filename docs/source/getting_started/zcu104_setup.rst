@@ -36,8 +36,7 @@ Board Setup
    .. image:: ../images/zcu104_setup.png
       :align: center
 
-  1. Set the **Boot** Dip Switches (SW6) to the following positions:
-    (This sets the board to boot from the Micro-SD card)
+  1. Set the **Boot** Dip Switches (SW6) to the following positions to sets the board to boot from the Micro-SD card:
 
     * Dip switch 1 (Mode 0): On (down position in diagram)
     * Dip switch 2 (Mode 1): Off (up position in diagram)
